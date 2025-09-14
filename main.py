@@ -3,12 +3,12 @@ from config import client
 from models import SymptomRequest
 from prompt import SYSTEM_PROMPT
 from fastapi.middleware.cors import CORSMiddleware
+from config import backend_url
 
 app = FastAPI(title="AI Symptom Checker", version="1.0")
 
 origins = [
-    "http://localhost:3000",
-    "http://localhost:4040"
+    backend_url
 ]
 
 app.add_middleware(
